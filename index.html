@@ -1,75 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Semi Filter Ad Page</title>
+<title>Loading...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ===============================
-     CLICKADILLA IN-PAGE SCRIPT
-     (IMPRESSION BASED)
-================================== -->
-
-<!-- GANTI publisher ID sesuai akun Clickadilla kamu -->
-<script async src="https://js.wpadmngr.com/static/adManager.js"
-        data-admpid="425265"></script>
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    flex-direction:column;
+    text-align:center;
+}
+.loader{
+    width:260px;
+    height:6px;
+    background:#333;
+    margin-top:20px;
+    overflow:hidden;
+    border-radius:3px;
+}
+.bar{
+    height:100%;
+    width:0%;
+    background:#00ff99;
+    animation:load 3s linear forwards;
+}
+@keyframes load{
+    from{width:0%;}
+    to{width:100%;}
+}
+p{
+    opacity:0.8;
+    margin-top:15px;
+    font-size:14px;
+}
+</style>
 
 </head>
 <body>
 
-<h3>Loading content…</h3>
+<h2>Please wait...</h2>
 
+<div class="loader">
+    <div class="bar"></div>
+</div>
+
+<p>Loading content...</p>
+
+<!-- Adsterra Popunder (Delayed 800ms) -->
 <script>
-/*
-=====================================
- SEMI FILTER – ADSTERRA DIRECTLINK
-=====================================
- Prinsip:
- - redirect hanya dari KLIK MANUSIA
- - bukan dari F12 / keyboard / focus
- - hanya 1x
-*/
-
-(function () {
-
-  let redirected = false;
-  let humanClick = false;
-
-  // 1️⃣ Deteksi KLIK MANUSIA ASLI
-  function markHumanClick(e) {
-    if (!e.isTrusted) return;        // harus event asli browser
-    if (e.button !== 0) return;      // hanya klik kiri mouse
-    humanClick = true;
-  }
-
-  document.addEventListener("mousedown", markHumanClick, true);
-  document.addEventListener("touchstart", markHumanClick, true);
-
-  // 2️⃣ Redirect HANYA jika ada klik manusia
-  document.addEventListener("click", function (e) {
-    if (!humanClick) return;
-    if (redirected) return;
-
-    redirected = true;
-    humanClick = false;
-
-    console.log("VALID HUMAN CLICK → REDIRECT ADSTERRA");
-
-    setTimeout(function () {
-      window.top.location.href = "https://www.effectivegatecpm.com/sn87qfmt?key=63d4c2105d12b55a4efa293596e6384d";
-    }, 150);
-
-  }, true);
-
-  // 3️⃣ Proteksi: JANGAN anggap DevTools sebagai klik
-  document.addEventListener("keydown", function () {
-    humanClick = false;
-  });
-
-  window.addEventListener("blur", function () {
-    humanClick = false;
-  });
-
-})();
+setTimeout(function(){
+    var s = document.createElement("script");
+    s.src = "//pl28073835.effectivgatecpm.com/5c/6e/69/5c6e690d17128fd53d7bb7c752447db5.js";
+    document.body.appendChild(s);
+}, 800);
 </script>
 
 </body>
