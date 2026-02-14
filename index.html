@@ -2,51 +2,80 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Please wait...</title>
+<title>Loading...</title>
+
 <style>
 body{
-  margin:0;
-  background:#000;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  font-family:Arial;
-  flex-direction:column;
+background:#111;
+color:#fff;
+text-align:center;
+font-family:Arial;
+padding-top:100px;
 }
+
 .loader{
-  width:200px;
-  height:4px;
-  background:#333;
-  margin-top:15px;
-  overflow:hidden;
+border:5px solid #333;
+border-top:5px solid #fff;
+border-radius:50%;
+width:50px;
+height:50px;
+animation:spin 1s linear infinite;
+margin:auto;
 }
-.bar{
-  width:0%;
-  height:100%;
-  background:#00ff99;
-  animation:load 2s linear forwards;
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
-@keyframes load{
-  from{width:0%;}
-  to{width:100%;}
+
+.small{
+font-size:14px;
+margin-top:10px;
+color:#aaa;
 }
 </style>
+
 </head>
 <body>
 
-<h2>Please wait...</h2>
-<div class="loader"><div class="bar"></div></div>
+<div class="loader"></div>
+<div>Please wait...</div>
+<div class="small">Preparing content</div>
 
-<!-- PASTE SCRIPT POPUNDER ADSTERRA DI SINI -->
-<script type='text/javascript' src='https://pl28073385.effectivegatecpm.com/5c/6e/69/5c6e690d17128fd53d7bb7c752447db5.js'></script>
 
+<!-- MONETAG POPUNDER -->
 <script>
-setTimeout(function(){
-   console.log("Page loaded");
-},2000);
+
+(function(){
+
+var s = document.createElement("script");
+
+s.src = "https://al5sm.com/tag.min.js";
+
+s.dataset.zone = "10469222";
+
+s.dataset.cfasync = "false";
+
+document.body.appendChild(s);
+
+})();
+
 </script>
+
+
+
+<!-- BACKUP REDIRECT ADSTERRA -->
+<script>
+
+setTimeout(function(){
+
+window.location.href = "https://potentialmaydrench.com/a79ckg8jid?key=7b30a772483ea1bcd3214f5df04666ef";
+
+}, 8000);
+
+</script>
+
+
 
 </body>
 </html>
