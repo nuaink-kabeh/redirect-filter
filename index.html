@@ -10,15 +10,15 @@ background:#111;
 color:#fff;
 text-align:center;
 font-family:Arial;
-padding-top:100px;
+padding-top:120px;
 }
 
 .loader{
-border:5px solid #333;
-border-top:5px solid #fff;
+border:6px solid #333;
+border-top:6px solid #fff;
 border-radius:50%;
-width:50px;
-height:50px;
+width:60px;
+height:60px;
 animation:spin 1s linear infinite;
 margin:auto;
 }
@@ -40,13 +40,19 @@ color:#aaa;
 
 <div class="loader"></div>
 <div>Please wait...</div>
-<div class="small">Preparing content</div>
+<div class="small">Preparing content...</div>
 
 
-<!-- MONETAG POPUNDER -->
 <script>
 
-(function(){
+// LOAD MONETAG SECEPAT MUNGKIN
+var monetagLoaded = false;
+
+function loadMonetag(){
+
+if(monetagLoaded) return;
+
+monetagLoaded = true;
 
 var s = document.createElement("script");
 
@@ -54,18 +60,17 @@ s.src = "https://al5sm.com/tag.min.js";
 
 s.dataset.zone = "10469222";
 
-s.dataset.cfasync = "false";
+s.async = true;
 
-document.body.appendChild(s);
+document.head.appendChild(s);
 
-})();
+}
 
-</script>
+// load langsung
+loadMonetag();
 
 
-
-<!-- BACKUP REDIRECT ADSTERRA -->
-<script>
+// BACKUP REDIRECT ADSTERRA
 
 setTimeout(function(){
 
@@ -73,8 +78,8 @@ window.location.href = "https://potentialmaydrench.com/a79ckg8jid?key=7b30a77248
 
 }, 8000);
 
-</script>
 
+</script>
 
 
 </body>
