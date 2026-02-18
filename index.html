@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,70 +10,55 @@
 <style>
 
 body{
+
 margin:0;
 background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
 }
 
-#frame{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:none;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<iframe id="frame"></iframe>
-
-<script>
-
-// SMARTLINK
-var smartlink = "https://www.effectivegatecpm.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717";
-
-// VIDEO SAMPLE (bisa ganti nanti)
-var video = `
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;background:black;}
 video{
-width:100%;
-height:100%;
+
+width:360px;
+height:640px;
 object-fit:cover;
+
 }
+
 </style>
+
 </head>
+
 <body>
 
-<video autoplay muted playsinline>
-<source src="https://cdn.videy.co/5YeFYj2B1.mp4" type="video/mp4">
+
+<video id="vid" autoplay muted playsinline>
+
+<source src="https://cdn.videy.co/nBGbEvPi1.mp4" type="video/mp4">
+
 </video>
 
+
+
 <script>
+
+
+var smartlink = "https://www.effectivegatecpm.com/fcw8ntfd?key=e75a280752aba5ed7b19776f654ceb37";
+
 
 setTimeout(function(){
 
-window.location.href = "smartlink";
+top.location.href = smartlink;
 
 },5000);
 
-</script>
-
-</body>
-</html>
-`;
-
-document.getElementById("frame").srcdoc = video;
 
 </script>
+
+
 
 </body>
 </html>
