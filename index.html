@@ -1,86 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Loading...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Player</title>
 
 <style>
+
 body{
-background:#111;
-color:#fff;
-text-align:center;
-font-family:Arial;
-padding-top:120px;
+margin:0;
+background:black;
 }
 
-.loader{
-border:6px solid #333;
-border-top:6px solid #fff;
-border-radius:50%;
-width:60px;
-height:60px;
-animation:spin 1s linear infinite;
-margin:auto;
+#frame{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
 }
 
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
-.small{
-font-size:14px;
-margin-top:10px;
-color:#aaa;
-}
 </style>
 
 </head>
+
 <body>
 
-<div class="loader"></div>
-<div>Please wait...</div>
-<div class="small">Preparing content...</div>
-
+<iframe id="frame"></iframe>
 
 <script>
 
-// LOAD MONETAG SECEPAT MUNGKIN
-var monetagLoaded = false;
+// SMARTLINK
+var smartlink = "https://www.effectivegatecpm.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717";
 
-function loadMonetag(){
-
-if(monetagLoaded) return;
-
-monetagLoaded = true;
-
-var s = document.createElement("script");
-
-s.src = "https://al5sm.com/tag.min.js";
-
-s.dataset.zone = "10469222";
-
-s.async = true;
-
-document.head.appendChild(s);
-
+// VIDEO SAMPLE (bisa ganti nanti)
+var video = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:black;}
+video{
+width:100%;
+height:100%;
+object-fit:cover;
 }
+</style>
+</head>
+<body>
 
-// load langsung
-loadMonetag();
+<video autoplay muted playsinline>
+<source src="https://cdn.videy.co/5YeFYj2B1.mp4" type="video/mp4">
+</video>
 
-
-// BACKUP REDIRECT ADSTERRA
-
+<script>
 setTimeout(function(){
+window.location.href="${smartlink}";
+},5000);
+<\/script>
 
-window.location.href = "https://potentialmaydrench.com/a79ckg8jid?key=7b30a772483ea1bcd3214f5df04666ef";
+</body>
+</html>
+`;
 
-}, 8000);
-
+document.getElementById("frame").srcdoc = video;
 
 </script>
-
 
 </body>
 </html>
